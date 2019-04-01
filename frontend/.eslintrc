@@ -1,0 +1,53 @@
+{
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"experimentalObjectRestSpread": true
+		}
+	},
+	"env": {
+		"es6": true,
+		"amd": true,
+		"jquery": true,
+		"browser": true,
+		"node": true
+	},
+	"globals": {
+		"ion": true,
+		"trans": true,
+		"axios": true,
+		"PropTypes": true,
+		"Echo": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended"
+	],
+	"rules": {
+		"keyword-spacing": [2, { "before": true, "after": true }],
+		"comma-spacing":2,
+		"no-multi-spaces":0,
+		"no-console": 1,
+		"eqeqeq": 1,
+		"curly": [2, "all"],
+		"quotes": [
+			2,
+			"single"
+		],
+		"space-unary-ops": 0,
+		"spaced-comment": 0,
+		"strict": 0,
+		"template-curly-spacing": 0,
+		"use-isnan": 2,
+		"valid-jsdoc": 0,
+		"valid-typeof": 2,
+		"vars-on-top": 0,
+		"no-undefined": 1,
+		"brace-style": [
+			2,
+			"1tbs"
+		]
+	}
+}

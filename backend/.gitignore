@@ -1,0 +1,14 @@
+# Logs
+*.log
+npm-debug.log*
+package-lock.json
+node_modules/
+/.vscode
+log-error
+/modules/**/doc/
+test/
+config/default.dev.js
+dotenv/.env.dev
+doc-code
+public/build
+log/

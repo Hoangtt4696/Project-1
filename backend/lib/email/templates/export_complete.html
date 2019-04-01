@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title of the document</title>
+</head>
+
+<body>
+  <div id="openPrinter">
+    <style>
+      @page {
+        margin: 30px;
+        size: auto;
+      }
+
+      body {
+        -webkit-touch-callout: none;
+        -webkit-text-size-adjust: none;
+        -webkit-user-select: none;
+        -webkit-highlight: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        background: none;
+        margin: 0 auto;
+        /*padding: 10px;*/
+        width: 100%;
+        position: relative;
+        text-align: left;
+        font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 20px;
+        color: #444;
+      }
+
+      .center {
+        margin: 0 auto;
+      }
+
+      .contain-email {
+        width: 600px;
+        /*border: 1px solid #00579b;*/
+        margin: 0 auto;
+      }
+
+      .email-header {
+        /* background: #00579b; */
+        word-break: normal;
+        padding-top: 25px;
+        padding-right: 10px;
+        padding-bottom: 25px;
+        padding-left: 10px;
+        font-size: 26px;
+        color: #fff;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        line-height: 30px;
+      }
+
+      .bg-email {
+        background: #00579b;
+      }
+
+      .bg-white {
+        background: #ffffff;
+      }
+
+      .table>tr>td {
+        padding: 0px
+      }
+
+      table {
+        display: table;
+        border-collapse: collapse;
+        border-spacing: 0px;
+        -webkit-border-horizontal-spacing: 0px;
+        -webkit-border-vertical-spacing: 0px;
+        width: 100%;
+      }
+      .bg-body {
+        background: #edf0f2;
+      }
+      .padding-top-20 {
+        padding-top: 20px;
+      }
+    </style>
+    <!--body-->
+    <div class="contain-email">
+      <table>
+        <tr class="bg-email">
+          <td>
+            <div class="email-header" style="padding-left: 40px">The Coffee House</div>
+          </td>
+        </tr>
+        <tr style="border: 1px solid #d3d3d3;">
+          <td>
+            <div style="padding-left: 20px;">
+              <p>Xin chào {{ToName}},</p>
+              <p></p>
+              <p></p>
+              <p>Hệ thống {{ appTitle }} vừa hoàn tất quá trình xuất file {{subjectType}} trong website của bạn.</p>
+              {% if startDate and endDate %}
+              <p>Nội dung xuất file:</p>
+              {% endif %}
+              {% if startDate %}
+              <p>Từ ngày: {{ startDate }}</p>
+              {% endif %}
+              {% if endDate %}
+              <p>Đến ngày: {{ endDate }}</p>
+              {% endif %}
+              {% if location_name %}
+              <p>Chi nhánh: {{ location_name }}</p>
+              {% endif %}
+              {% if province_name %}
+              <p>Tỉnh/Thành: {{ province_name }}</p>
+              {% endif %}
+              {% if district_name %}
+              <p>Quận/Huyện: {{ district_name }}</p>
+              {% endif %}
+              <p>Vui lòng click vào link dưới để tải về file chứa dữ liệu:</p>
+              <p></p>
+              {% if downloadLink %}
+              <a href="{{ downloadLink }}" style="background-color:#007dc1;border-radius:3px;display:inline-block;color:#ffffff;font-family:Helvetica,Arial;font-size:13px;padding:6px 24px;text-decoration:none"
+                target="_blank">Tải file 1</a>
+              <p></p>
+              {% endif %}
+              {% if downloadLinks %}
+              <a href="{{ url }}" style="background-color:#007dc1;border-radius:3px;display:inline-block;color:#ffffff;font-family:Helvetica,Arial;font-size:13px;padding:6px 24px;text-decoration:none"
+                target="_blank">Tải file {{ index }}</a>
+              <p></p>
+              {% endif %}
+              <p>
+                <strong><i>Lưu ý, file sẽ tự hủy sau 7 ngày</i></strong>
+              </p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>

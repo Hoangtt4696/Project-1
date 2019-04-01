@@ -1,0 +1,5 @@
+.vscode
+.idea
+package-lock.json
+backend/log
+.history

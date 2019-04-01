@@ -1,0 +1,51 @@
+image: docker:latest
+stages:
+  - test
+  - build
+  - deploy
+variables:
+  DOCKER_DRIVER: overlay2
+  CONTAINER_IMAGE: registry.haravan.com/haravan_app/danhgia360/web:$CI_BUILD_REF_NAME
+  CONTAINER : registry.haravan.com
+
+##test:
+##  stage: test
+##  script:
+##    - echo 'test'
+##  only:
+##    - develop
+##    - master
+
+build:
+  stage: build
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CONTAINER
+    - docker build --build-arg CI_JOB_ID=${CI_JOB_ID} -t $CONTAINER_IMAGE .
+    - docker push $CONTAINER_IMAGE
+    - docker logout $CONTAINER
+  only:
+    - staging
+    - master
+
+deploy_staging:
+  stage: deploy
+  image: vinhhrv/ubuntu-deploy
+  script:
+    - ./deploy/deploy_staging.sh
+  environment:
+    name: staging
+    url: https://danhgia360-onapp.sku.vn
+  only:
+    - staging
+
+deploy_production:
+ stage: deploy
+ image: vinhhrv/ubuntu-deploy
+ script:
+   - ./deploy/deploy_production1.sh
+ when: manual
+ environment:
+   name: production
+   url: https://danhgia360.onapp.haravan.com
+ only:
+   - master

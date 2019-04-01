@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+</head>
+
+<body>
+	<div id="openPrinter">
+  <style>
+    @page {
+      margin: 30px;
+      size: auto;
+    }
+
+    body {
+      -webkit-touch-callout: none;
+      -webkit-text-size-adjust: none;
+      -webkit-user-select: none;
+      -webkit-highlight: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+      background: none;
+      margin: 0 auto;
+      /*padding: 10px;*/
+      width: 100%;
+      position: relative;
+      text-align: left;
+      font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 20px;
+      color: #444;
+    }
+
+    .center {
+      margin: 0 auto;
+    }
+
+   .contain-email {
+	width: 600px;
+	/*border: 1px solid #00579b;*/
+	 margin: 0 auto;
+	}
+	.email-header{
+		/* background: #00579b; */
+		word-break: normal;
+	    padding-top: 25px;
+	    padding-right: 10px;
+	    padding-bottom: 25px;
+	    padding-left: 10px;
+	    font-size: 26px;
+	    color: #fff;
+	    font-weight: bold;
+	    letter-spacing: 0.5px;
+	    line-height: 30px;
+	}
+	.bg-email{
+		background: #00579b;
+	}
+	.bg-white{
+		background: #ffffff;
+	}
+	.table > tr > td {
+		padding: 0px
+	}
+	table {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    width: 100%;
+		
+	}
+	.bg-body{
+		background: #edf0f2;
+	}
+	.padding-top-20{
+		padding-top: 20px; 
+	}
+  </style>
+  <!--body-->
+  <div class="contain-email">
+  		<table>
+  			<tr class="bg-email">
+  				<td><div class="email-header" style="padding-left: 40px">The Coffee House</div></td>
+  			</tr>
+  			<tr style="border: 1px solid #d3d3d3;">
+  				<td>
+  					<div class="email-body ">
+              <p style="padding-left: 20px">Xin chào {{ToName}}</p>
+              {% if isSuccess === true %}
+                <p style="padding-left: 40px">Hệ thống đã hoàn tất tạo cuộc bình chọn
+                    <a href="{{ link }}" target="_blank">{{ voteName }}</a>
+                </p>
+              {% endif %}
+              {% if isSuccess === false %}
+                <p>
+                  Đã có lỗi xảy ra trong quá trình tạo cuộc bình chọn {{voteName}}. Vui lòng tạo lại cuộc bình chọn.`
+                </p>
+              {% endif %}
+					</div>
+					</td>
+  			</tr>
+  		</table>
+	</div>
+</div>	
+</body>
+
+</html>

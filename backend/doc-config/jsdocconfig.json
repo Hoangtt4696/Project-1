@@ -1,0 +1,26 @@
+{
+  "templates": {
+    "systemName": "Hara Oes Enterprise",
+    "copyright": "Haravan",
+    "theme": "yeti",
+    "navType": "horizontal",
+    "collapseSymbols": true,
+    "search": true,
+    "linenums": true,
+    "inverseNav": true
+  },
+  "opts": {
+    "encoding": "utf8",
+    "destination": "./doc-code",
+    "recurse": true
+  },
+  "source": {
+    "include": [
+      "./modules",
+      "./core",
+      "./helper"
+    ],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  }
+}

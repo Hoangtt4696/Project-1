@@ -1,0 +1,43 @@
+{
+  "name": "hara-oes-enterprise",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.11.4",
+    "axios": "^0.18.0",
+    "dotenv": "~6.1.0",
+    "draft-js": "^0.10.5",
+    "draft-js-export-html": "^1.2.0",
+    "haravan-react-components": "^1.0.104458",
+    "lodash": "^4.17.11",
+    "moment": "^2.23.0",
+    "prop-types": "^15.6.2",
+    "query-string": "~6.2.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-draft-wysiwyg": "^1.12.14",
+    "react-loadable": "^5.5.0",
+    "react-picky": "^4.1.0",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "../deploy/build.sh",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
